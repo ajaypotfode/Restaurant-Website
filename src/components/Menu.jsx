@@ -30,8 +30,6 @@ const Menu = () => {
         <div className="menutype d-flex justify-content-between" id="menulist" >
           {
             menuimg.map((items, index) => {
-              console.log(items.img)
-
               return (
                 <>
                   <div className="menuitems" key={index} onClick={() => { foodType(items.name) }}>
@@ -53,7 +51,7 @@ const Menu = () => {
               <div className="price">
                 Rs. {item.price}
               </div>
-              <button className="btn bg-warning" onClick={()=>{getPopup(item.name,item.price)}}>Order Food</button>
+              <button className="btn bg-warning" onClick={()=>{getPopup(item.name,item.price)}}>Add TO Cart</button>
             </div>
           ))}
         </div>

@@ -36,6 +36,9 @@ body {
   background-color: #010103;
   overflow-x: hidden;
 }
+.main-Container{
+  background-color: #010103;   
+}
 
 section {
   padding: 2rem 7%;
@@ -54,13 +57,13 @@ section {
   text-transform: uppercase;
 }
 
-.btn {
+.btn  {
   margin-top: 1rem;
   display: inline-block;
-  padding: 0.9rem 3rem;
-  font-size: 1.7rem;
+  padding: 0.9rem 3rem !important;
+  font-size: 1.5rem !important;
   color: #fff;
-  background: #ffc107;
+  background: #ffc107 !important;
   cursor: pointer;
 }
 
@@ -89,9 +92,13 @@ section {
 .header .navbar .link {
   margin: 0 1rem;
   font-size: 1.6rem;
-  color: #fff;
+  list-style: none; 
 }
-.header .navbar .link:hover {
+.header .navbar .link a{
+  color: #fff;
+  text-decoration: none;
+}
+.header .navbar .link a:hover {
   color: #ffc107;
   border-bottom: 0.1rem solid #ffc107;
   padding-bottom: 0.5rem;
@@ -112,7 +119,7 @@ section {
   display: none;
 }
 
-.header .search-form {
+/* .header .search-form {
   position: absolute;
   top: 115%;
   right: 7%;
@@ -125,7 +132,7 @@ section {
   transform-origin: top;
 }
 
-.header .search-form.active {
+.header .search-form .active {
   transform: scaleY(1);
 }
 
@@ -202,7 +209,7 @@ section {
 .header .cart-items-container .btn {
   width: 100%;
   text-align: center;
-}
+} */
 
 .home {
   z-index: 80;
@@ -237,8 +244,9 @@ section {
   padding: 1rem 0;
   color: #eee;
 }
-.about,.menu,.blogs,.contact,.products,.review{
+.about,.menu,.contact,.review{
   background-color: #010103;
+  margin-top:160px;
 }
 .about .row {
   display: flex;
@@ -254,10 +262,10 @@ section {
 .about .row .image img {
   width: 100%;
 }
-.menu,.about,.contact,.review{
+/* .menu,.about,.contact,.review{
   background-color:#010103;
   margin-top: 80px;
-}
+} */
 .about .row .content {
   flex: 1 1 45rem;
   padding: 2rem;

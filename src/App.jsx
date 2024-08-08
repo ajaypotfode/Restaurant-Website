@@ -12,27 +12,16 @@ import Login from "./components/userPages/Login";
 import SignUp from "./components/userPages/SignUp";
 import ContextProvider from "./context/userContext";
 import Main from "./Main";
+import Cart from "./components/cart/Cart";
 const App = () => {
   return (
     <>
-      {/* <Navbar />
-      <Home />
-      <About />
-      <Menu />
-      <Review />
-      <Contact />
-      <Footer /> */}
       <ContextProvider>
         <Routes >
-          <Route path="" element={<Main />}>
-            <Route path="" element={<Home />} />
-            <Route path="about" element={<About />} />
-            <Route path="menu" element={<Menu />} />
-            <Route path="review" element={<Review />} />
-            <Route path="contact" element={<Contact />} />
+            <Route path="" element={<Main />}/>
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<SignUp />} />
-          </Route>
+             <Route path="/cart" element={<Cart/>} />
         </Routes>
       </ContextProvider>
     </>
