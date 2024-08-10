@@ -1,5 +1,5 @@
 import React from "react";
-import { review } from "../Data";
+import { review } from "./data/Data";
 import img from "../assets/images/quote-img.png"
 const Review = () => {
   return (

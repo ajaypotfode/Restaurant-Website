@@ -4,11 +4,14 @@ import { createUserWithEmailAndPassword,
          GoogleAuthProvider, 
          onAuthStateChanged} from 'firebase/auth';
 import React, { createContext, useEffect, useState } from 'react'
-import { auth } from './firebase';
+import { app, auth } from './firebase';
+import { addDoc, collection, getFirestore } from 'firebase/firestore';
 
 export const UserAuthContext = createContext();
 const ContextProvider = ({ children }) => {
+      const firestore=getFirestore(app)
     const [user, setUser] = useState(null);
+    const [cartItems,setItems]= useState([])
 
     const SignUp = (email, pass) => {
         return createUserWithEmailAndPassword(auth, email, pass)
@@ -28,6 +31,9 @@ const ContextProvider = ({ children }) => {
         const googleAuthProvider = new GoogleAuthProvider();
         return signInWithPopup(auth, googleAuthProvider);
     }
+    const getMenuData=(data)=>{
+          setItems([...cartItems,data])
+    }
 
     useEffect(() => {
         const verify = onAuthStateChanged(auth, (currentUser) => {
@@ -36,7 +42,7 @@ const ContextProvider = ({ children }) => {
         return verify;
     })
 
-  return <UserAuthContext.Provider value={{user,SignUp, Login, googleSignIn, LogOut }}>
+  return <UserAuthContext.Provider value={{user,SignUp, Login, googleSignIn, LogOut,getMenuData, cartItems}}>
                   {children}
          </UserAuthContext.Provider>
 }

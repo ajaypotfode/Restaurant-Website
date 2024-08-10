@@ -1,26 +1,26 @@
-import React from "react";
-import data from "../menu"
-
+import React, { useContext } from "react";
 import { useState } from "react";
-import { menuimg } from "../Data";
-import Swal from "sweetalert2";
+import { menuimg } from "./data/Data";
+import data from "./data/menu"
+import { UserAuthContext } from "../context/userContext";
+import { ToastContainer, toast } from 'react-toastify';
+
+
 const Menu = () => {
+  const context = useContext(UserAuthContext);
   const [updatedFood, setUpdatedFood] = useState(data)
-  // const [popup, setPopup]=useState(false)
   const foodType = (foodname) => {
     const fType = data.filter((fItems) => {
       return foodname == fItems.category
     })
     setUpdatedFood(fType)
   }
-  const getPopup=(name,price)=>{
-    Swal.fire({
-      title: "Your order is conformed!!",
-      text:`name :${name} - price: Rs.${price}`,
-      icon: "success"
-    });
+  
+  const addToCart=(image,name,price,id)=>{
+    context.user?context.getMenuData({image,name,price}):
+            toast.error("Login First");
+    // context.getMenuData({image,name,price,id})
   }
-
   return (
     <>
       <section className="menu" id="menu">
@@ -39,7 +39,6 @@ const Menu = () => {
                 </>
               )
             })
-
           }
         </div>
         <div className="box-container">
@@ -47,15 +46,20 @@ const Menu = () => {
             <div className="box" key={index}>
               <img src={item.image} alt="" />
               <h3>{item.name}</h3>
-              <h5 className="text-light">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusantium magnam odit fugiat, error tempora iusto asperiores non corrupti aliquid.</h5>
+              <h5 className="text-light"> sit amet consectetur adipisicing elit. Accusantium magnam odit fugiat.</h5>
               <div className="price">
                 Rs. {item.price}
               </div>
-              <button className="btn bg-warning" onClick={()=>{getPopup(item.name,item.price)}}>Add TO Cart</button>
+              {/* <button className="btn bg-warning" onClick={()=>{getPopup(item.name,item.price)}}>Add TO Cart</button> */}
+              <button className="btn bg-warning" onClick={()=>{addToCart(item.image,item.name,item.price,item.id)}} >Add TO Cart</button> 
             </div>
           ))}
         </div>
       </section>
+      <ToastContainer
+         position="top-center"
+         autoClose={2000}
+         hideProgressBar/>
     </>
   );
 };
