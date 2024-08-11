@@ -5,11 +5,9 @@ import { createUserWithEmailAndPassword,
          onAuthStateChanged} from 'firebase/auth';
 import React, { createContext, useEffect, useState } from 'react'
 import { app, auth } from './firebase';
-import { addDoc, collection, getFirestore } from 'firebase/firestore';
 
 export const UserAuthContext = createContext();
 const ContextProvider = ({ children }) => {
-      const firestore=getFirestore(app)
     const [user, setUser] = useState(null);
     const [cartItems,setItems]= useState([])
 

@@ -19,10 +19,11 @@ const Cart = () => {
         return navigate("/")
     }
 
-    const billContainer = () => {
+    const billContainer = (info) => {
         billref.current.classList.toggle("active");
         mainCont.current.classList.toggle("active-blur")
-        toast.info("Your Order Is confirmed")
+       info?toast.info("Your Order Is confirmed!!"):toast.info("Thank You for ordering!!")
+       
     }
 
     // Handle quantity change
@@ -31,11 +32,9 @@ const Cart = () => {
             ...quantities,
             [name]: value
         });
-        console.log(quantities);
     };
 
     const removeCartItems = (id) => {
-        //   newItems.length===1?setCartItems([]):setCartItems(newItems.filter((item)=>item.id!==id));
         setCartItems(newItems.filter((item) => item.id !== id))
         // refresh page cause of data reloading
         newItems.length === 1 && window.location.reload();
@@ -117,7 +116,7 @@ const Cart = () => {
                         <button
                             className="cancel-btn"
                             id="cart-btn"
-                            onClick={billContainer}
+                            onClick={()=>billContainer("")}
                         >
                             <FaXmark />
                         </button>

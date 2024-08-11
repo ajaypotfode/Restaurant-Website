@@ -17,9 +17,8 @@ const Menu = () => {
   }
   
   const addToCart=(image,name,price,id)=>{
-    context.user?context.getMenuData({image,name,price}):
+    context.user?context.getMenuData({image,name,price,id}):
             toast.error("Login First");
-    // context.getMenuData({image,name,price,id})
   }
   return (
     <>

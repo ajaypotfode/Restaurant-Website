@@ -21,7 +21,7 @@
     width: 80%;
     padding: 20px;
     border-bottom: 0.2rem solid #ffc107;
-    scroll-margin: -100px;
+    /* scroll-margin: -100px; */
     /* z-index: 100; */
   }
 .items{

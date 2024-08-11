@@ -1,11 +1,11 @@
 import React from "react";
-// import Swal from "sweetalert2"; 
+import {toast,ToastContainer } from 'react-toastify';
 
 const Contact = () => {
+
   const getEmail=(event)=>{
-    
-    alert("thank you for, contact with us")
-    event.preventDefault();
+    toast.info("Thank you for contacting us!!!")
+    // event.preventDefault();
   }
 
   return (
@@ -23,7 +23,7 @@ const Contact = () => {
             referrerPolicy="no-referrer-when-downgrade">
           </iframe>
 
-          <form action="">
+          <form action="" onSubmit={getEmail}>
             <h3>get in touch</h3>
             <div className="inputBox">
               <span className="fas fa-user"></span>
