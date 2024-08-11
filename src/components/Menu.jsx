@@ -9,6 +9,8 @@ import { ToastContainer, toast } from 'react-toastify';
 const Menu = () => {
   const context = useContext(UserAuthContext);
   const [updatedFood, setUpdatedFood] = useState(data)
+   const {getMenuData,user}=context
+
   const foodType = (foodname) => {
     const fType = data.filter((fItems) => {
       return foodname == fItems.category
@@ -17,7 +19,7 @@ const Menu = () => {
   }
   
   const addToCart=(image,name,price,id)=>{
-    context.user?context.getMenuData({image,name,price,id}):
+      user?getMenuData({image,name,price,id}):
             toast.error("Login First");
   }
   return (
@@ -49,7 +51,6 @@ const Menu = () => {
               <div className="price">
                 Rs. {item.price}
               </div>
-              {/* <button className="btn bg-warning" onClick={()=>{getPopup(item.name,item.price)}}>Add TO Cart</button> */}
               <button className="btn bg-warning" onClick={()=>{addToCart(item.image,item.name,item.price,item.id)}} >Add TO Cart</button> 
             </div>
           ))}

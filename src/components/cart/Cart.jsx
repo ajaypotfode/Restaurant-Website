@@ -9,11 +9,11 @@ import {toast,ToastContainer } from 'react-toastify';
 const Cart = () => {
     const context = useContext(UserAuthContext);
     const navigate = useNavigate();
-    const { cartItems } = context;
-    const [newItems, setCartItems] = useState(cartItems)
+    const { cartItems,setItems,cartCount,setCartCount } = context;
     const [quantities, setQuantities] = useState({});
     const billref = useRef()
     const mainCont=useRef()
+
     // Use for back to homepage
     const pageNavigation = () => {
         return navigate("/")
@@ -22,10 +22,10 @@ const Cart = () => {
     const billContainer = (info) => {
         billref.current.classList.toggle("active");
         mainCont.current.classList.toggle("active-blur")
-       info?toast.info("Your Order Is confirmed!!"):toast.info("Thank You for ordering!!")
-       
+       info?toast.info("Your Order Is confirmed!!"):toast.info("Thank You for ordering!!") 
+       !info&&setItems([])   
     }
-
+   
     // Handle quantity change
     const handleQuantityChange = (name, value) => {
         setQuantities({
@@ -35,14 +35,12 @@ const Cart = () => {
     };
 
     const removeCartItems = (id) => {
-        setCartItems(newItems.filter((item) => item.id !== id))
-        // refresh page cause of data reloading
-        newItems.length === 1 && window.location.reload();
+        setItems(cartItems.filter((item) => item.id !== id))
     }
 
 
     // Calculate the total price
-    const totalPrice = newItems.reduce((total, item) => {
+    const totalPrice = cartItems.reduce((total, item) => {
         const quantity = quantities[item.name] || 1; // Default to 1 if not found
         return total + (item.price * quantity);
     }, 0);
@@ -62,7 +60,7 @@ const Cart = () => {
                 </h1>
 
                 {
-                    newItems.map((item, index) => {
+                    cartItems.map((item, index) => {
                         const { image, name, price, id } = item;
                         return (
                             <div className='cart-items' key={index}>
@@ -123,7 +121,7 @@ const Cart = () => {
                     </h4>
                     <div className='bill-Items'>
                         {
-                            newItems.map((item, index) => {
+                            cartItems.map((item, index) => {
                                 return (
                                     <>
                                         {/* <ul className='items'>

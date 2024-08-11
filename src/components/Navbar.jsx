@@ -8,18 +8,19 @@ const Navbar = () => {
   const context = useContext(UserAuthContext);
   const navigate = useNavigate(null)
   const navbarRef = useRef();
+  const {LogOut,user,cartItems}=context
 
   const navbarHandler = () => {
     navbarRef.current.classList.toggle("active");
   }
 
   async function userLogout() {
-    await context.LogOut();
+    await LogOut();
     navigate('/login')
   }
 
   const handlecart = () => {
-    return context.user?navigate('/cart'):
+    return user?navigate('/cart'):
             toast.error("Login First");
           // return navigate('/cart')
   }
@@ -47,7 +48,7 @@ const Navbar = () => {
             className="fas fa-shopping-cart"
             id="cart-btn"
             onClick={handlecart}
-          ></div>
+          ><sup className="cartCount">{cartItems.length}</sup></div>
 
           <div
             className="fas fa-bars"
