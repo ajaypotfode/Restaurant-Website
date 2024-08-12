@@ -5,7 +5,8 @@ const data= [
         category: "Pure Veg",
         price: "80",
         description: "A crispy rice and lentil crepe filled with spiced potato filling, served with coconut chutney and sambar.",
-        image: "project2/Images/menu-card/alooParatha.jpg",
+        // image: "project2/Images/menu-card/alooParatha.jpg",
+        image:`${process.env.PUBLIC_URL}/project2/Images/menu-card/alooParatha.jpg`
       },
       {
         id: 2,
@@ -13,7 +14,7 @@ const data= [
         category: "Cake",
         price: "50",
         description: "Flattened rice cooked with onions, mustard seeds, turmeric, curry leaves, and peanuts.",
-        image: "project2/Images/menu-card/bananaCake.jpg",
+        image: `${process.env.PUBLIC_URL}/project2/Images/menu-card/bananaCake.jpg`
       },
       {
         id: 3,
@@ -21,7 +22,7 @@ const data= [
         category: "Non Veg",
         price: "200",
         description: "Soft and fluffy steamed rice cakes made from fermented rice and lentil batter, served with sambar and chutney.",
-        image: "project2/Images/menu-card/biryani.jpg",
+        image: `${process.env.PUBLIC_URL}/project2/Images/menu-card/biryani.jpg`
       },
       {
         id: 4,
@@ -29,7 +30,7 @@ const data= [
         category: "Coffee",
         price: "60",
         description: "Whole wheat flatbread stuffed with a spiced mashed potato filling, served with yogurt or pickle.",
-        image: "project2/Images/menu-card/black coffee.jpg",
+        image: `${process.env.PUBLIC_URL}/project2/Images/menu-card/black coffee.jpg`
       },
       {
         id: 5,
@@ -37,7 +38,7 @@ const data= [
         category: "Noodles",
         price: "80",
         description: "Fragrant basmati rice cooked with tender chicken pieces, flavored with aromatic spices and saffron.",
-        image: "project2/Images/menu-card/butterNoodles.jpg",
+        image: `${process.env.PUBLIC_URL}/project2/Images/menu-card/butterNoodles.jpg`
       },
       {
         id: 6,
@@ -45,7 +46,7 @@ const data= [
         category: "Noodles",
         price: "100",
         description: "Creamy kidney bean curry served with steamed basmati rice, often accompanied by pickle or salad.",
-        image: "project2/Images/menu-card/ChickenNoodles.jpg",
+        image: `${process.env.PUBLIC_URL}/project2/Images/menu-card/ChickenNoodles.jpg`
       },
       {
         id: 7,
@@ -53,7 +54,7 @@ const data= [
         category: "Salad",
         price: "80",
         description: "A platter containing a variety of dishes including dal, sabzi (vegetables), rice, roti (flatbread), raita, and dessert.",
-        image: "project2/Images/menu-card/ChickenSalad.jpg",
+        image: `${process.env.PUBLIC_URL}/project2/Images/menu-card/ChickenSalad.jpg`
       },
       {
         id: 8,
@@ -61,7 +62,7 @@ const data= [
         category: "Pure Veg",
         price: "80",
         description: "Creamy spinach curry cooked with chunks of paneer (Indian cheese), seasoned with aromatic spices.",
-        image: "project2/Images/menu-card/palakpaneer.jpg",
+        image: `${process.env.PUBLIC_URL}/project2/Images/menu-card/palakpaneer.jpg`
       },
       {
         id: 9,
@@ -69,7 +70,7 @@ const data= [
         category: "Pure Veg",
         price: "90",
         description: "Baby potatoes cooked in a rich and spicy gravy made from yogurt, tomatoes, and a blend of Kashmiri spices.",
-        image: "project2/Images/menu-card/dum aloo.jpg",
+        image: `${process.env.PUBLIC_URL}/project2/Images/menu-card/dum aloo.jpg`
       },
       {
         id: 10,
@@ -77,7 +78,7 @@ const data= [
         category: "Non Veg",
         price: "120",
         description: "A tangy and flavorful curry made with fish fillets cooked in coconut milk, tamarind, and Goan spices.",
-        image: "project2/Images/menu-card/fish curry.jpg",
+        image: `${process.env.PUBLIC_URL}/project2/Images/menu-card/fish curry.jpg`
       },
       {
         id: 11,
@@ -85,7 +86,7 @@ const data= [
         category: "Rolls",
         price: "50",
         description: "Soft paneer cubes cooked in a rich and creamy tomato-based gravy, flavored with butter and Indian spices.",
-        image: "project2/Images/menu-card/ChickenRoll.jpg",
+        image: `${process.env.PUBLIC_URL}/project2/Images/menu-card/ChickenRoll.jpg`
       },
       {
         id: 12,
@@ -93,7 +94,7 @@ const data= [
         category: "Pure Veg",
         price: "100",
         description: "Yellow lentils tempered with ghee, cumin seeds, garlic, and spices, served with rice or roti.",
-        image: "project2/Images/menu-card/dal Tadka.jpg",
+        image: `${process.env.PUBLIC_URL}/project2/Images/menu-card/dal Tadka.jpg`
       },
       {
         id: 13,
@@ -101,7 +102,7 @@ const data= [
         category: "Cake",
         price: "50",
         description: "Crispy fried pastry filled with spiced potatoes, peas, and sometimes meat or lentils.",
-        image: "project2/Images/menu-card/chocolatecake.jpg",
+        image: `${process.env.PUBLIC_URL}/project2/Images/menu-card/chocolatecake.jpg`
       },
       {
         id: 14,
@@ -109,7 +110,7 @@ const data= [
         category: "Salad",
         price: "80",
         description: "Hollow puri shells filled with spicy water, tamarind chutney, potatoes, onions, and chickpeas, a popular street snack.",
-        image: "project2/Images/menu-card/GreekSalad.jpg",
+        image: `${process.env.PUBLIC_URL}/project2/Images/menu-card/GreekSalad.jpg`
       },
       {
         id: 15,
@@ -117,7 +118,7 @@ const data= [
         category: "Coffee",
         price: "70",
         description: "A savory snack made from puffed rice, sev (crispy chickpea noodles), chopped vegetables, chutneys, and spices.",
-        image: "project2/Images/menu-card/iceCoffee.jpg",
+        image: `${process.env.PUBLIC_URL}/project2/Images/menu-card/iceCoffee.jpg`
       },
       {
         id: 16,
@@ -125,7 +126,7 @@ const data= [
         category: "Coffee",
         price: "80",
         description: "A spicy potato fritter (vada) served in a bun (pav) with chutneys, a popular Mumbai street food.",
-        image: "project2/Images/menu-card/lateCoffee.jpg",
+        image: `${process.env.PUBLIC_URL}/project2/Images/menu-card/lateCoffee.jpg`
       },
       {
         id: 17,
@@ -133,7 +134,7 @@ const data= [
         category: "Non Veg",
         price: "40",
         description: "A spicy potato fritter (vada) served in a bun (pav) with chutneys, a popular Mumbai street food.",
-        image: "project2/Images/menu-card/omletpav.jpg",
+        image: `${process.env.PUBLIC_URL}/project2/Images/menu-card/omletpav.jpg`
       },
       {
         id: 18,
@@ -141,7 +142,7 @@ const data= [
         category: "Rolls",
         price: "60",
         description: "A platter containing a variety of dishes including dal, sabzi (vegetables), rice, roti (flatbread), raita, and dessert.",
-        image: "project2/Images/menu-card/peri.jpg",
+        image: `${process.env.PUBLIC_URL}/project2/Images/menu-card/peri.jpg`
       },
       {
         id: 19,
@@ -149,7 +150,7 @@ const data= [
         category: "Cake",
         price: "60",
         description: "A platter containing a variety of dishes including dal, sabzi (vegetables), rice, roti (flatbread), raita, and dessert.",
-        image: "project2/Images/menu-card/redVelvetcake.jpg",
+        image: `${process.env.PUBLIC_URL}/project2/Images/menu-card/redVelvetcake.jpg`
       },
       {
         id:20,
@@ -157,7 +158,7 @@ const data= [
         category: "Noodles",
         price: "80",
         description: "A platter containing a variety of dishes including dal, sabzi (vegetables), rice, roti (flatbread), raita, and dessert.",
-        image: "project2/Images/menu-card/vegNoodles.jpg",
+        image: `${process.env.PUBLIC_URL}/project2/Images/menu-card/vegNoodles.jpg`
       },
       {
         id: 21,
@@ -165,7 +166,7 @@ const data= [
         category: "Rolls",
         price: "60",
         description: "A platter containing a variety of dishes including dal, sabzi (vegetables), rice, roti (flatbread), raita, and dessert.",
-        image: "project2/Images/menu-card/peri.jpg",
+        image: `${process.env.PUBLIC_URL}/project2/Images/menu-card/peri.jpg`
       },
       {
         id: 22,
@@ -173,7 +174,7 @@ const data= [
         category: "Salad",
         price: "60",
         description: "A platter containing a variety of dishes including dal, sabzi (vegetables), rice, roti (flatbread), raita, and dessert.",
-        image: "project2/Images/menu-card/vegsalad.jpg",
+        image: `${process.env.PUBLIC_URL}/project2/Images/menu-card/vegsalad.jpg`
       }
     ]
     export default data;
