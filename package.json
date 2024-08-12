@@ -1,5 +1,5 @@
 {
-  "homepage": "https://ajaypotfode.github.io/Restaurant-Website",
+  "homepage": "https://ajaypotfode.github.io",
   "name": "my-restro",
   "version": "0.1.0",
   "private": true,
@@ -48,5 +48,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^6.1.1"
   }
 }
