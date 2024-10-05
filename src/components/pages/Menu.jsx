@@ -28,7 +28,6 @@ const Menu = () => {
     // Check if the item already exists in the cart
     const existingItem = cartItems.find((item) => item.id === id);
     if (existingItem) {
-      toast.error("you already choose this item !");
       return;
     }
 
