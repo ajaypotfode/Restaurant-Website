@@ -20,7 +20,7 @@ const Cart = () => {
     }
 
     const billContainer = (info) => {
-        // billref.current.classList.toggle("active");
+        billref.current.classList.toggle("active");
         mainCont.current.classList.toggle("active-blur")
        info?toast.info("Your Order Is confirmed!!"):toast.info("Thank You for ordering!!") 
        !info&&setItems([])   
