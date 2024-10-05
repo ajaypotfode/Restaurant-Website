@@ -7,7 +7,6 @@ import SignUp from "./components/pages/SignUp";
 import ContextProvider from "./context/userContext";
 import Main from "./Main";
 import Cart from "./components/cart/Cart";
-import Address from "./components/cart/Address";
 
 const App = () => {
   return (
@@ -20,7 +19,6 @@ const App = () => {
              <Route path="/cart" element={<Cart/>} />
         </Routes>
       </ContextProvider>
-      {/* <Address/> */}
     </>
   );
 };

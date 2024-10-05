@@ -10,7 +10,6 @@ import Address from './Address';
 const Cart = () => {
     const context = useContext(UserAuthContext);
     const navigate = useNavigate();
-    const [address, setAddress]=useState(false)
     const { cartItems,setItems} = context;
     const [quantities, setQuantities] = useState({});
     const billref = useRef()
@@ -26,7 +25,6 @@ const Cart = () => {
         mainCont.current.classList.toggle("active-blur")
        info?toast.info("Your Order Is confirmed!!"):toast.info("Thank You for ordering!!") 
        !info&&setItems([])   
-       setAddress(!address)
     }
    
     // Handle quantity change
@@ -111,7 +109,7 @@ const Cart = () => {
                     <button className='btn' onClick={billContainer}>Confirm Order</button>
                 </div>
             </div>
-            {/* <div className="bill-container" ref={billref}>
+            <div className="bill-container" ref={billref}>
                     <h4 className="heading ">
                         <span>Food</span>Bill
                         <button
@@ -141,10 +139,7 @@ const Cart = () => {
                         </div>
                     </div>
                     
-                </div> */}
-                {
-                    address&&<Address/>
-                }
+                </div>
             <ToastContainer
              position="top-center"
              autoClose={1000}

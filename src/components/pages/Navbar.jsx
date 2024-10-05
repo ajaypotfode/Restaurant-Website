@@ -22,7 +22,6 @@ const Navbar = () => {
   const handlecart = () => {
     return user?navigate('/cart'):
             toast.error("Login First");
-          // return navigate('/cart')
   }
 
   return (

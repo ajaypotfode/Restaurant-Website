@@ -9,7 +9,7 @@ import { ToastContainer, toast } from 'react-toastify';
 const Menu = () => {
   const context = useContext(UserAuthContext);
   const [updatedFood, setUpdatedFood] = useState(data)
-   const {getMenuData,user}=context
+   const {getMenuData,user,cartItems}=context
 
   const foodType = (foodname) => {
     const fType = data.filter((fItems) => {
@@ -18,10 +18,23 @@ const Menu = () => {
     setUpdatedFood(fType)
   }
   
-  const addToCart=(image,name,price,id)=>{
-      user?getMenuData({image,name,price,id}):
-            toast.error("Login First");
-  }
+  const addToCart = (image, name, price, id) => {
+    // Check if user is authenticated
+    if (!user) {
+      toast.error("Login First");
+      return;
+    }
+
+    // Check if the item already exists in the cart
+    const existingItem = cartItems.find((item) => item.id === id);
+    if (existingItem) {
+      toast.error("you already choose this item !");
+      return;
+    }
+
+    // Add new item to the cart
+    getMenuData({ image, name, price, id });
+  };
   return (
     <>
       <section className="menu" id="menu">
