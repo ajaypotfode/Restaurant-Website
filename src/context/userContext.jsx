@@ -1,8 +1,6 @@
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
-  signInWithPopup,
-  GoogleAuthProvider,
   onAuthStateChanged
 } from 'firebase/auth';
 import React, { createContext, useEffect, useState } from 'react'
@@ -27,10 +25,6 @@ const ContextProvider = ({ children }) => {
       console.error('Error signing out:', error);
     }
   };
-  const googleSignIn = () => {
-    const googleAuthProvider = new GoogleAuthProvider();
-    return signInWithPopup(auth, googleAuthProvider);
-  }
 
   useEffect(() => {
     const verify = onAuthStateChanged(auth, (currentUser) => {
@@ -43,7 +37,7 @@ const ContextProvider = ({ children }) => {
     setItems([...cartItems, data])
   }
 
-  return <UserAuthContext.Provider value={{ user, SignUp, Login, googleSignIn, LogOut, getMenuData,
+  return <UserAuthContext.Provider value={{ user, SignUp, Login,LogOut, getMenuData,
                                              cartItems,setItems}}>
     {children}
   </UserAuthContext.Provider>

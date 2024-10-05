@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import { Link, useNavigate,Outlet } from 'react-router-dom'
 import '../../assets/css/login.css'
 import { UserAuthContext } from '../../context/userContext';
-import GoogleButton from 'react-google-button';
+
 const Login = () => {
     const context = useContext(UserAuthContext);
     const [email, setEmail] = useState("")
@@ -26,17 +26,6 @@ const Login = () => {
           
        }
     }
-    const userGoogleLogin = async (e) => {
-        e.preventDefault();
-       try {
-        await context.googleSignIn();
-       } catch (error) {
-        window.alert(error)
-        console.log(error);
-        
-       }
-
-    }
     return (
         <>
             <div className="login-container">
@@ -55,16 +44,6 @@ const Login = () => {
                     </form>
                     <div className="sign-up-link ">
                         <p>Don't have account? <Link to="/signup">Sign UP</Link></p>
-                        <h4>Or</h4>
-                        <GoogleButton
-                            className="g-btn"
-                            type="light"
-                            style={{
-                                background: "none",
-                                border: "1px solid #ffc107",
-                                color: "#fff"
-                            }}
-                            onClick={userGoogleLogin} />
                     </div>
                 </div>
             </div>
