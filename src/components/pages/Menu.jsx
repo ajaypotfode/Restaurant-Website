@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
 import { useState } from "react";
-import { menuimg } from "./data/Data";
-import data from "./data/menu"
-import { UserAuthContext } from "../context/userContext";
+import { menuimg } from "../data/Data";
+import data from "../data/menu"
+import { UserAuthContext } from "../../context/userContext";
 import { ToastContainer, toast } from 'react-toastify';
 
 

@@ -1,6 +1,6 @@
 import React from "react";
-import { review } from "./data/Data";
-import img from "../assets/images/quote-img.png"
+import { review } from "../data/Data";
+import img from "../../assets/images/quote-img.png"
 const Review = () => {
   return (
     <>

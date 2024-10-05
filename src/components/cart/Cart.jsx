@@ -1,15 +1,17 @@
 
 import React, { useContext, useRef, useState } from 'react';
-import './cart.css';
+import '../../assets/css/cart.css';
 import { UserAuthContext } from '../../context/userContext';
 import { FaXmark } from 'react-icons/fa6';
 import { useNavigate } from 'react-router-dom';
 import {toast,ToastContainer } from 'react-toastify';
+import Address from './Address';
 
 const Cart = () => {
     const context = useContext(UserAuthContext);
     const navigate = useNavigate();
-    const { cartItems,setItems,cartCount,setCartCount } = context;
+    const [address, setAddress]=useState(false)
+    const { cartItems,setItems} = context;
     const [quantities, setQuantities] = useState({});
     const billref = useRef()
     const mainCont=useRef()
@@ -20,10 +22,11 @@ const Cart = () => {
     }
 
     const billContainer = (info) => {
-        billref.current.classList.toggle("active");
+        // billref.current.classList.toggle("active");
         mainCont.current.classList.toggle("active-blur")
        info?toast.info("Your Order Is confirmed!!"):toast.info("Thank You for ordering!!") 
        !info&&setItems([])   
+       setAddress(!address)
     }
    
     // Handle quantity change
@@ -108,7 +111,7 @@ const Cart = () => {
                     <button className='btn' onClick={billContainer}>Confirm Order</button>
                 </div>
             </div>
-            <div className="bill-container" ref={billref}>
+            {/* <div className="bill-container" ref={billref}>
                     <h4 className="heading ">
                         <span>Food</span>Bill
                         <button
@@ -124,10 +127,7 @@ const Cart = () => {
                             cartItems.map((item, index) => {
                                 return (
                                     <>
-                                        {/* <ul className='items'>
-                                            <li><h4>ItemName :</h4><h4>price :</h4></li>
-                                            <li><p>{item.name}</p><p>{item.price}Rs</p></li>
-                                        </ul> */}
+
                                         <ul className='items'>
                                         <li className='d-flex gap-5 justify-content-between'><p>{item.name}</p><p>{item.price}</p></li>
                                         </ul>
@@ -140,7 +140,11 @@ const Cart = () => {
                         <h3>Total</h3><h3>{totalPrice} Rs</h3>
                         </div>
                     </div>
-                </div>
+                    
+                </div> */}
+                {
+                    address&&<Address/>
+                }
             <ToastContainer
              position="top-center"
              autoClose={1000}

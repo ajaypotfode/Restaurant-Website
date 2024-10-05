@@ -1,11 +1,11 @@
 import React from 'react'
-import Navbar from './components/Navbar'
-import Footer from './components/Footer'
-import Home from './components/Home'
-import About from './components/About'
-import Menu from './components/Menu'
-import Review from './components/Review'
-import Contact from './components/Contact'
+import Navbar from './components/pages/Navbar'
+import Footer from './components/pages/Footer'
+import Home from './components/pages/Home'
+import About from './components/pages/About'
+import Menu from './components/pages/Menu'
+import Review from './components/pages/Review'
+import Contact from './components/pages/Contact'
 
 const Main = () => {
   return (

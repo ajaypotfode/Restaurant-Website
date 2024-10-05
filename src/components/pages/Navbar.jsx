@@ -1,7 +1,7 @@
 import React, { useContext, useRef } from "react";
-import Logo from "../assets/images/logo.png";
+import Logo from "../../assets/images/logo.png";
 import { NavLink, useNavigate } from "react-router-dom";
-import { UserAuthContext } from "../context/userContext";
+import { UserAuthContext } from "../../context/userContext";
 import {toast,ToastContainer } from 'react-toastify';
 
 const Navbar = () => {

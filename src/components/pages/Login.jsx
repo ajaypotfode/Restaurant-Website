@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { Link, useNavigate,Outlet } from 'react-router-dom'
-import './page.css'
+import '../../assets/css/login.css'
 import { UserAuthContext } from '../../context/userContext';
 import GoogleButton from 'react-google-button';
 const Login = () => {

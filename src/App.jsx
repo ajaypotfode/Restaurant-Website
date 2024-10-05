@@ -2,11 +2,12 @@ import React from "react";
 import "./assets/css/style.css";
 import 'react-toastify/dist/ReactToastify.css';
 import { Route, Routes } from "react-router-dom";
-import Login from "./components/userPages/Login";
-import SignUp from "./components/userPages/SignUp";
+import Login from "./components/pages/Login";
+import SignUp from "./components/pages/SignUp";
 import ContextProvider from "./context/userContext";
 import Main from "./Main";
 import Cart from "./components/cart/Cart";
+import Address from "./components/cart/Address";
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
              <Route path="/cart" element={<Cart/>} />
         </Routes>
       </ContextProvider>
+      {/* <Address/> */}
     </>
   );
 };
