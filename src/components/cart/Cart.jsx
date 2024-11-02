@@ -105,7 +105,7 @@ const Cart = () => {
                         <label htmlFor="">Total</label>
                         <span className='items-value'>{totalPrice} Rs</span>
                     </div>
-                    <button className='btn' onClick={()=>billContainer(true)}>Confirm Order</button>
+                    <button className='btn' onClick={billContainer}>Confirm Order</button>
                 </div>
             </div>
             <div className="bill-container" ref={billref}>
@@ -114,7 +114,7 @@ const Cart = () => {
                         <button
                             className="cancel-btn"
                             id="cart-btn"
-                            onClick={()=>billContainer(false)}
+                            onClick={()=>billContainer("")}
                         >
                             <FaXmark />
                         </button>

@@ -32,7 +32,7 @@ const Menu = () => {
     }
 
     // Add new item to the cart
-    getMenuData({ image, name, price, id });
+    getMenuData({ image, name, price, id});
   };
   return (
     <>
@@ -45,7 +45,7 @@ const Menu = () => {
             menuimg.map((items, index) => {
               return (
                 <>
-                  <div className="menuitems" key={index} onClick={() => { foodType(items.name) }}>
+                  <div className="menuitems" key={items.id} onClick={() => { foodType(items.name) }}>
                     <img id="me-img" src={items.img}  height={"100px"} width={"100px"} />
                     <p>{items.name}</p>
                   </div>
